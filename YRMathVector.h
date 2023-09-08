@@ -16,6 +16,12 @@ public:
 	T X,Y;
 
 	//operator overloads
+	template<typename T2>
+	void operator=(const Vector2D<T2>& a)
+	{
+		this->X = static_cast<T>(a.X);
+		this->Y = static_cast<T>(a.Y);
+	}
 	//addition
 	Vector2D operator+(const Vector2D& a) const
 	{
@@ -128,6 +134,13 @@ public:
 	T X,Y,Z;
 
 	//operator overloads
+	template<typename T2>
+	void operator=(const Vector3D<T2>& a)
+	{
+		this->X = static_cast<T>(a.X);
+		this->Y = static_cast<T>(a.Y);
+		this->Z = static_cast<T>(a.Z);
+	}
 	//addition
 	Vector3D operator+(const Vector3D& a) const
 	{
