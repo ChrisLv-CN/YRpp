@@ -41,8 +41,24 @@ struct ColorStruct
 
 	inline explicit operator WORD() const;
 
+	operator bool()
+	{
+		return R != 0 || G != 0 || B != 0;
+	}
+
 	BYTE R, G, B;
 };
+
+// Helper
+namespace Colors
+{
+	static ColorStruct Empty{ 0, 0, 0 };
+	static ColorStruct Red{ 252, 0, 0 };
+	static ColorStruct Green{ 0, 252, 0 };
+	static ColorStruct Blue{ 0, 0, 252 };
+	static ColorStruct White{ 252, 252, 252 };
+	static ColorStruct Black{ 3, 3, 3 };
+}
 
 struct BytePalette {
 	ColorStruct Entries[256];
