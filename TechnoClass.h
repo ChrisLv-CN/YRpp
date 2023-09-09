@@ -190,7 +190,7 @@ public:
 	virtual bool vt_entry_29C() R0;
 	virtual bool IsReadyToCloak() const JMP_THIS(0x6FBDC0);
 	virtual bool ShouldNotBeCloaked() const JMP_THIS(0x6FBC90);
-	virtual DirStruct* TurretFacing(DirStruct* pBuffer) const R0;
+	virtual FacingClass* TurretFacing(FacingClass* pBuffer) const R0;
 	virtual bool IsArmed() const R0; // GetWeapon(primary) && GetWeapon(primary)->WeaponType
 	virtual bool vt_entry_2B0() const R0;
 	virtual double GetStoragePercentage() const R0;
@@ -214,7 +214,7 @@ public:
 	virtual CellStruct* vt_entry_2FC(CellStruct* Buffer, DWORD dwUnk2, DWORD dwUnk3) const R0;
 	virtual CoordStruct * vt_entry_300(CoordStruct * Buffer, DWORD dwUnk2) const R0;
 	virtual DWORD vt_entry_304(DWORD dwUnk, DWORD dwUnk2) const R0;
-	virtual DirStruct* GetRealFacing(DirStruct* pBuffer) const R0;
+	virtual FacingClass* GetRealFacing(FacingClass* pBuffer) const R0;
 	virtual InfantryTypeClass* GetCrew() const R0;
 	virtual bool vt_entry_310() const R0;
 	virtual bool CanDeploySlashUnload() const R0;
@@ -486,14 +486,15 @@ public:
 		return this->GetIonCannonValue(difficulty);
 	}
 
-	DirStruct TurretFacing() const {
-		DirStruct ret;
+	FacingClass TurretFacing() const {
+		FacingClass ret;
 		this->TurretFacing(&ret);
 		return ret;
 	}
 
-	DirStruct GetRealFacing() const {
-		DirStruct ret;
+	// return bodyFacing or turretFacing if it has turret
+	FacingClass GetRealFacing() const {
+		FacingClass ret;
 		this->GetRealFacing(&ret);
 		return ret;
 	}
