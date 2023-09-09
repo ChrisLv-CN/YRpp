@@ -359,8 +359,14 @@ public:
 	bool CanBePermaMindControlled() const
 		{ JMP_THIS(0x53C450); }
 
-	LaserDrawClass* CreateLaser(ObjectClass *pTarget, int idxWeapon, WeaponTypeClass *pWeapon, const CoordStruct &Coords)
+	LaserDrawClass* CreateLaser(AbstractClass *pTarget, int idxWeapon, WeaponTypeClass *pWeapon, const CoordStruct &Coords)
 		{ JMP_THIS(0x6FD210); }
+
+	EBolt* Electric_Zap(AbstractClass* pTarget, WeaponTypeClass* pWeapon, const CoordStruct& Coords)
+		{ JMP_THIS(0x6FD460); }
+
+	void DrawALinkTo(CoordStruct from, CoordStruct to, ColorStruct color)
+		{ JMP_THIS(0x704E40); }
 
 	/*
 	 *  Cell->AddThreat(this->Owner, -this->ThreatPosed);
