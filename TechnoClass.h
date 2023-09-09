@@ -23,6 +23,7 @@ class AnimClass;
 class BulletClass;
 class BuildingClass;
 class CellClass;
+class EBolt;
 class HouseClass;
 class FootClass;
 class HouseClass;
