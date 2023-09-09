@@ -116,6 +116,11 @@ public:
 			return *reinterpret_cast<double*>(NaN);
 		}
 	}
+	//is empty
+	bool IsEmpty()
+	{
+		return X == Empty.X && Y == Empty.Y;
+	}
 };
 
 template <typename T>
@@ -249,6 +254,11 @@ public:
 			Y * a.Z - Z * a.Y,
 			Z * a.X - X * a.Z,
 			X * a.Y - Y * a.X };
+	}
+	//is empty
+	bool IsEmpty()
+	{
+		return X == Empty.X && Y == Empty.Y && Z == Empty.Z;
 	}
 };
 
