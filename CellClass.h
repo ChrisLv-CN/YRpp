@@ -473,3 +473,28 @@ public:
 	CellFlags          Flags;	//Various settings.
 	PROTECTED_PROPERTY(BYTE,     padding_144[4]);
 };
+
+enum class TileType : unsigned int
+{
+	Unknown = 0,
+	Tunnel = 0x484AB0,
+	Water = 0x485060,
+	Blank = 0x486380,
+	Ramp = 0x4863A0,
+	Cliff = 0x4863D0,
+	Shore = 0x4865B0,
+	Wet = 0x4865D0,
+	MiscPave = 0x486650,
+	Pave = 0x486670,
+	DirtRoad = 0x486690,
+	PavedRoad = 0x4866D0,
+	PavedRoadEnd = 0x4866F0,
+	PavedRoadSlope = 0x486710,
+	Median = 0x486730,
+	Bridge = 0x486750,
+	WoodBridge = 0x486770,
+	ClearToSandLAT = 0x486790,
+	Green = 0x4867B0,
+	NotWater = 0x4867E0,
+	DestroyableCliff = 0x486900
+};
