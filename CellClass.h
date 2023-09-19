@@ -24,6 +24,31 @@ class TagClass;
 class TiberiumClass;
 class PixelFXClass;
 
+enum class TileType : unsigned int
+{
+	Unknown = 0,
+	Tunnel = 0x484AB0,
+	Water = 0x485060,
+	Blank = 0x486380,
+	Ramp = 0x4863A0,
+	Cliff = 0x4863D0,
+	Shore = 0x4865B0,
+	Wet = 0x4865D0,
+	MiscPave = 0x486650,
+	Pave = 0x486670,
+	DirtRoad = 0x486690,
+	PavedRoad = 0x4866D0,
+	PavedRoadEnd = 0x4866F0,
+	PavedRoadSlope = 0x486710,
+	Median = 0x486730,
+	Bridge = 0x486750,
+	WoodBridge = 0x486770,
+	ClearToSandLAT = 0x486790,
+	Green = 0x4867B0,
+	NotWater = 0x4867E0,
+	DestroyableCliff = 0x486900
+};
+
 class NOVTABLE CellClass : public AbstractClass
 {
 public:
@@ -291,6 +316,31 @@ public:
 	ISTILE(NotWater, 0x4867E0);
 	ISTILE(DestroyableCliff, 0x486900);
 
+	TileType GetTileType()
+	{
+		if (Tile_Is_Tunnel()) return TileType::Tunnel;
+		if (Tile_Is_Water()) return TileType::Water;
+		if (Tile_Is_Blank()) return TileType::Blank;
+		if (Tile_Is_Ramp()) return TileType::Ramp;
+		if (Tile_Is_Cliff()) return TileType::Cliff;
+		if (Tile_Is_Shore()) return TileType::Shore;
+		if (Tile_Is_Wet()) return TileType::Wet;
+		if (Tile_Is_MiscPave()) return TileType::MiscPave;
+		if (Tile_Is_Pave()) return TileType::Pave;
+		if (Tile_Is_DirtRoad()) return TileType::DirtRoad;
+		if (Tile_Is_PavedRoad()) return TileType::PavedRoad;
+		if (Tile_Is_PavedRoadEnd()) return TileType::PavedRoadEnd;
+		if (Tile_Is_PavedRoadSlope()) return TileType::PavedRoadSlope;
+		if (Tile_Is_Median()) return TileType::Median;
+		if (Tile_Is_Bridge()) return TileType::Bridge;
+		if (Tile_Is_WoodBridge()) return TileType::WoodBridge;
+		if (Tile_Is_ClearToSandLAT()) return TileType::ClearToSandLAT;
+		if (Tile_Is_Green()) return TileType::Green;
+		if (Tile_Is_NotWater()) return TileType::NotWater;
+		if (Tile_Is_DestroyableCliff()) return TileType::DestroyableCliff;
+		return TileType::Unknown;
+	}
+
 	static CoordStruct Cell2Coord(const CellStruct &cell, int z = 0)
 	{
 		CoordStruct ret;
@@ -472,29 +522,4 @@ public:
 
 	CellFlags          Flags;	//Various settings.
 	PROTECTED_PROPERTY(BYTE,     padding_144[4]);
-};
-
-enum class TileType : unsigned int
-{
-	Unknown = 0,
-	Tunnel = 0x484AB0,
-	Water = 0x485060,
-	Blank = 0x486380,
-	Ramp = 0x4863A0,
-	Cliff = 0x4863D0,
-	Shore = 0x4865B0,
-	Wet = 0x4865D0,
-	MiscPave = 0x486650,
-	Pave = 0x486670,
-	DirtRoad = 0x486690,
-	PavedRoad = 0x4866D0,
-	PavedRoadEnd = 0x4866F0,
-	PavedRoadSlope = 0x486710,
-	Median = 0x486730,
-	Bridge = 0x486750,
-	WoodBridge = 0x486770,
-	ClearToSandLAT = 0x486790,
-	Green = 0x4867B0,
-	NotWater = 0x4867E0,
-	DestroyableCliff = 0x486900
 };
