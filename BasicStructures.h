@@ -56,6 +56,7 @@ namespace Colors
 	static ColorStruct Red{ 252, 0, 0 };
 	static ColorStruct Green{ 0, 252, 0 };
 	static ColorStruct Blue{ 0, 0, 252 };
+	static ColorStruct Yellow{ 252, 212, 0 };
 	static ColorStruct White{ 252, 252, 252 };
 	static ColorStruct Black{ 3, 3, 3 };
 }
