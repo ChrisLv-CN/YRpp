@@ -172,6 +172,11 @@ struct RandomStruct
 struct RectangleStruct
 {
 	int X, Y, Width, Height;
+
+	bool IsEmpty()
+	{
+		return X == 0 && Y == 0 && Width == 0 && Height == 0;
+	}
 };
 
 struct LTRBStruct

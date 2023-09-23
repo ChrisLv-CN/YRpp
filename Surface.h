@@ -12,6 +12,8 @@ struct SHPStruct;
 class NOVTABLE Surface
 {
 public:
+	static constexpr reference<bool*, 0x84310Cu> const Pattern{};
+
 	Surface() = default;
 
 	virtual ~Surface() RX;
@@ -108,12 +110,20 @@ public:
 
 	virtual bool IsDSurface() R0; // guessed - secsome
 
+	static bool __fastcall ClipLine(Point2D& point1, Point2D& point2, RectangleStruct& Bounds)
+		{ JMP_STD(0x7BC2B0); }
+
 	// Helper
 	RectangleStruct GetRect()
 	{
 		RectangleStruct ret{ 0, 0, 0, 0 };
 		this->GetRect(&ret);
 		return ret;
+	}
+
+	bool DrawDashedLine(Point2D* pStart, Point2D* pEnd, int nColor, int nOffset)
+	{
+		return DrawDashedLine(pStart, pEnd, nColor, Pattern.get(), nOffset);
 	}
 
 
