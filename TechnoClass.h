@@ -351,6 +351,13 @@ public:
 		return pType ? pType->get_ID() : nullptr;
 	}
 
+	bool InRange(CoordStruct* pLocation, AbstractClass* pTarget, WeaponTypeClass* pWeapon)
+		{ JMP_THIS(0x6F7220); }
+
+	// Unit and Infantry fire logic is diffrent, this function for help to fire custom weapon, force use Unit's fire logic
+	BulletClass* Fire_IgnoreType(AbstractClass* pTarget, int idxWeapon)
+		{ JMP_THIS(0x6FDD50); }
+
 	int TimeToBuild() const
 		{ JMP_THIS(0x6F47A0); }
 
