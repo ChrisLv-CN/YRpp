@@ -629,8 +629,8 @@ public:
 	TechnoClass*     BunkerLinkedItem;
 
 	float            PitchAngle; // not exactly, and it doesn't affect the drawing, only internal state of a dropship
-	DECLARE_PROPERTY(CDTimerClass, DiskLaserTimer);
-	int           	 ROF;
+	DECLARE_PROPERTY(CDTimerClass, ROFTimer);// ROF
+	int              ROF;
 	int              Ammo;
 	int              Value; // set to actual cost when this gets queued in factory, updated only in building's 42C
 
