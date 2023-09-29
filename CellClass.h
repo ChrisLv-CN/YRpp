@@ -217,6 +217,15 @@ public:
 		return buffer;
 	}
 
+	// pass
+	bool IsClearToMove(SpeedType speedType, bool ignoreInfantry, bool ignoreVehicles, ZoneType zone, MovementZone movementZone, int level, bool isBridge)
+		{ JMP_THIS(0x4834A0); }
+
+	bool IsClearToMove(SpeedType speedType, MovementZone movementZone, bool ignoreInfantry = false, bool ignoreVehicles = false, int level = -1)
+	{
+		return IsClearToMove(speedType, ignoreInfantry, ignoreInfantry, ZoneType::None, movementZone, level, ContainsBridge());
+	}
+
 	void ActivateVeins()
 		{ JMP_THIS(0x486920); }
 

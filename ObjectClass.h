@@ -8,6 +8,7 @@
 #include <Audio.h>
 #include <ObjectTypeClass.h>
 #include <TagClass.h>
+#include <RulesClass.h>
 
 #include <Helpers/Template.h>
 
@@ -263,6 +264,16 @@ public:
 		CoordStruct ret;
 		this->GetFLH(&ret, idxWeapon, base);
 		return ret;
+	}
+
+	DamageState TakeDamage(int damage, WarheadTypeClass* pWH, bool crewed, bool ignoreDefenses = true, ObjectClass* pAttacker = nullptr, HouseClass* pAttackingHouse = nullptr)
+	{
+		return ReceiveDamage(&damage, 0, pWH, pAttacker, ignoreDefenses, !crewed, pAttackingHouse);
+	}
+
+	DamageState TakeDamage(int damage, bool crewed, bool ignoreDefenses = true, ObjectClass* pAttacker = nullptr, HouseClass* pAttackingHouse = nullptr)
+	{
+		return TakeDamage(damage, RulesClass::Instance->C4Warhead, crewed, ignoreDefenses, pAttacker, pAttackingHouse);
 	}
 
 	//Constructor NEVER CALL IT DIRECTLY
