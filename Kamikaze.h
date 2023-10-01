@@ -13,7 +13,7 @@ class Kamikaze {
 public:
 	struct KamikazeControl {
 		AircraftClass* Item;
-		CellClass* Cell;
+		AbstractClass* Cell; // Change to AbstractClass for Mission homing TechnoClass
 	};
 
 	static constexpr reference<Kamikaze, 0xABC5F8u> const Instance{};
