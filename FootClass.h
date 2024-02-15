@@ -151,8 +151,8 @@ public:
 	DWORD           unknown_530;
 	DWORD           unknown_534;
 	int				WalkedFramesSoFar;
-	bool            unknown_bool_53C;
-	DWORD           unknown_540;
+	bool            PlayingMovingSound;
+	DWORD           MovingSoundDelay;
 
 	DECLARE_PROPERTY(AudioController, Audio7);
 
