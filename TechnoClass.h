@@ -703,7 +703,7 @@ public:
 	HouseClass*      ChronoWarpedByHouse;
 	bool             unknown_bool_430;
 	bool             IsMouseHovering;
-	bool             unknown_bool_432;
+	bool             WasSelected;
 	TeamClass*       OldTeam;
 	bool             CountedAsOwnedSpecial; // for absorbers, infantry uses this to manually control OwnedInfantry count
 	bool             Absorbed; // in UnitAbsorb/InfantryAbsorb or smth, lousy memory
