@@ -213,6 +213,10 @@ public:
 
 	virtual bool CanBlit() R0;
 
+	void DrawLineBlit(RectangleStruct* pRect, Point2D* pStart, Point2D* pEnd,
+		ColorStruct* pStartColor, int mult, int start_z, int end_z)
+	{ JMP_THIS(0x4BEAC0); }
+
 	// Comments from thomassneddon
 	void DrawSHP(ConvertClass* Palette, SHPStruct* SHP, int FrameIndex,
 		const Point2D* const Position, const RectangleStruct* const Bounds, BlitterFlags Flags, int Remap,
