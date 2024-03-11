@@ -452,6 +452,9 @@ public:
 	int __fastcall ClearPlanningTokens(NetworkEvent* pEvent)
 		{ JMP_STD(0x6386E0); }
 
+	int GetElevationBonusDistance(AbstractClass* pTarget)
+		{ JMP_THIS(0x6F6F60); }
+
 	void SetTargetForPassengers(AbstractClass* pTarget)
 		{ JMP_THIS(0x710550); }
 
