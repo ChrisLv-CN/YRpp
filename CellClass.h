@@ -218,12 +218,12 @@ public:
 	}
 
 	// pass
-	bool IsClearToMove(SpeedType speedType, bool ignoreInfantry, bool ignoreVehicles, ZoneType zone, MovementZone movementZone, int level, bool isBridge)
+	bool IsClearToMove(SpeedType speedType, bool ignoreInfantry, bool ignoreVehicles, ZoneType zone, MovementZone movementZone, int level, bool alt)
 		{ JMP_THIS(0x4834A0); }
 
 	bool IsClearToMove(SpeedType speedType, MovementZone movementZone, bool ignoreInfantry = false, bool ignoreVehicles = false, int level = -1)
 	{
-		return IsClearToMove(speedType, ignoreInfantry, ignoreInfantry, ZoneType::None, movementZone, level, ContainsBridge());
+		return IsClearToMove(speedType, ignoreInfantry, ignoreInfantry, ZoneType::None, movementZone, level, (bool)(this->Flags & CellFlags::CenterRevealed));
 	}
 
 	void ActivateVeins()
