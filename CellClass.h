@@ -203,6 +203,9 @@ public:
 	void SetMapCoords(const CoordStruct& coords)
 		{ JMP_THIS(0x485240); }
 
+	int GetFloorHeightAdjust() const
+		{ JMP_THIS(0x485080); }
+
 	int GetFloorHeight(Point2D const& subcoords) const
 		{ JMP_THIS(0x47B3A0); }
 
@@ -284,8 +287,8 @@ public:
 
 	// helper
 	bool ContainsBridge() const
-	{ 
-		return static_cast<bool>(this->Flags & CellFlags::BridgeHead); 
+	{
+		return static_cast<bool>(this->Flags & CellFlags::BridgeHead);
 	}
 	bool ContainsBridgeEx() const
 	{
