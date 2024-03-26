@@ -80,11 +80,11 @@ public:
 
 	int TurnRate;
 	int Speed;
-	float Climb;
-	float Crash;
+	int Climb;
+	int Crash;
 	int Height;
-	float Accel;
-	float Wobbles;
+	int Accel;
+	int Wobbles;
 	int Deviation;
 	bool NoWobbles;
 	BYTE unknown_3D;
